@@ -4,28 +4,28 @@
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/worldmap.geo.json",
+    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Homework%20Week%209/aus_lga_topojson.json",
     "format": {
       "type": "topojson",
-      "feature": "world"
+      "feature": "countries"
     }
   },
   "transform": [
     {
-      "lookup": "properties.name",
+      "lookup": "LGA_NAME11",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/suicide_count.csv"
+          "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Homework%20Week%209/test.csv"
         },
-        "key": "Country",
+        "key": "LGA",
         "fields": [
           "Count"
         ]
       }
     },
     {
-      "calculate": "datum.Count + 0.1",
-      "as": "Suicide Count"
+      "calculate": "datum.Count > 0",
+      "as": "Count"
     }
   ],
   "projection": {
@@ -39,14 +39,14 @@
       "field": "Count",
       "type": "quantitative",
       "scale": {
-        "type": "log"
+        "type": "linear"
       }
     },
     "tooltip": [
       {
-        "field": "properties.name",
+        "field": "LGA_NAME11",
         "type": "nominal",
-        "title": "Country"
+        "title": "LGA"
       },
       {
         "field": "Count",
