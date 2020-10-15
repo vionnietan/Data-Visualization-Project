@@ -4,15 +4,15 @@
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Homework%20Week%209/aus_lga_topojson.json",
+    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Homework%20Week%209/aus_lgatopo.json",
     "format": {
       "type": "topojson",
-      "feature": "countries"
+      "feature": "aus_lga"
     }
   },
   "transform": [
     {
-      "lookup": "LGA_NAME11",
+      "lookup": "properties.Name",
       "from": {
         "data": {
           "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Homework%20Week%209/test.csv"
@@ -44,7 +44,7 @@
     },
     "tooltip": [
       {
-        "field": "LGA_NAME11",
+        "field": "properties.Name",
         "type": "nominal",
         "title": "LGA"
       },
