@@ -12,7 +12,7 @@
       "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Suicide%20Dataset/suicide_count.csv"
+          "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Suicide%20Dataset/data/suicide_count.csv"
         },
         "key": "Country",
         "fields": ["Count"]
