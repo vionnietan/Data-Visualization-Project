@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": "300px",
-  "height":"300px",
+  "width": "600px",
+  "height":"600px",
   "title": "No. of Suicides based on Gender from 1979 - 2016",
   "data": {
     "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/year_clean.csv"
