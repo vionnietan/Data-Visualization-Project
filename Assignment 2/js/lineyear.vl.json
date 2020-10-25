@@ -4,7 +4,7 @@
   "height": 600,
   "title": "No. of Suicides based on Gender from 1979 - 2016",
   "data": {
-    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Suicide%20Dataset/year_clean.csv"
+    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/year_clean.csv"
   },
   "params": [
     {
