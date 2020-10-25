@@ -4,7 +4,7 @@
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/worldmap.geo.json",
+    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/js/worldmap.geo.json",
     "format": {
       "type": "topojson",
       "feature": "world"
@@ -15,7 +15,7 @@
       "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/suicide_count.csv"
+          "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/suicide_count.csv"
         },
         "key": "Country",
         "fields": [
