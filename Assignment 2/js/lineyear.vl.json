@@ -4,8 +4,6 @@
   "data": {
     "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/year_clean.csv"
   },
-  "width": 500,
-  "height": 500,
   "params": [
     {
       "name": "gender_selection",
