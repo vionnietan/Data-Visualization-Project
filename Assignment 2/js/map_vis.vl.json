@@ -1,5 +1,7 @@
 {
  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+ "width": "300px",
+ "height":"300px",
  "title": "Suicide Counts around the world 1969 - 2016",
  "projection": {"type": "equirectangular"},
  "data": {
