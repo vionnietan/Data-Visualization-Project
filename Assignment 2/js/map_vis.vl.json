@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Suicide Count across the world - from 1950 to 2018",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/worldmap.geo.json",
+    "format": {
+      "type": "topojson",
+      "feature": "world"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/suicide_count.csv"
+        },
+        "key": "Country",
+        "fields": [
+          "Count"
+        ]
+      }
+    },
+    {
+      "calculate": "datum.Count + 0.1",
+      "as": "Suicide Count"
+    }
+  ],
+  "projection": {
+    "type": "equirectangular"
+  },
+  "mark": {
+    "type": "geoshape"
+  },
+  "encoding": {
+    "color": {
+      "field": "Count",
+      "type": "quantitative",
+      "scale": {
+        "type": "log"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.name",
+        "type": "nominal",
+        "title": "Country"
+      },
+      {
+        "field": "Count",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "config": {}
+}
