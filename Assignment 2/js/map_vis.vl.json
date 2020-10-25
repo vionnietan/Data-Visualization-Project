@@ -1,13 +1,13 @@
 {
  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
- "width": 600,
- "height": 600,
  "title": "Suicide Counts around the world 1969 - 2016",
  "projection": {"type": "equirectangular"},
  "data": {
   "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/js/worldmap.geo.json",
   "format": {"type": "topojson", "feature": "world"}
  },
+ "width": 600,
+ "height": 600,
  "transform": 
  [
   {
