@@ -6,14 +6,32 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  
 </head>
 <body>
 
+<h1>Multiple Visualisations</h1>
+
+<h2>This is the first visualisation</h2>
 <div id="choropleth_map"></div>
 
+<h2>This is the second visualisation</h2>
+<div id="line_plot"></div>
+
 <script type="text/javascript">
-  var spec = "https://vionnietan.github.io/FIT3179/map_vis.vl.json";
-  vegaEmbed('#choropleth_map', spec).then(function(result) {
+  
+  var vis1 = "js/map_vis.vl.json";
+  
+  vegaEmbed('#choropleth_map', vis1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis2 = "js/lineyear.vl.json";
+  
+  vegaEmbed('#line_plot', vis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
