@@ -6,8 +6,7 @@
   "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/js/worldmap.geo.json",
   "format": {"type": "topojson", "feature": "world"}
  },
- "width": 600,
- "height": 600,
+ "width": "container",
  "transform": 
  [
   {
