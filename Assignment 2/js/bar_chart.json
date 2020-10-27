@@ -3,7 +3,6 @@
   "title":"Top 10 Countries with highest Suicide Count",
   "background":"#FEF8EC",
   "width":"container",
-  "height":"container",
   "data": {
     "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/count_clean.csv"
   },
