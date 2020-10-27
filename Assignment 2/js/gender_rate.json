@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/groupedbar_final.csv"
+  },
+  "params": [
+    {
+      "name": "Year",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 1979,
+        "max": 2016,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.year >= 1969"},
+    {"filter": "datum.year >= Year"},
+    {"calculate": "datum.sex == 'female' ? 'Female' : 'Male'", "as": "Gender"}
+  ],
+  "width": {"step": 12},
+  "mark": "bar",
+  "encoding": {
+    "column": {"field": "year", "type": "nominal", "spacing": 10},
+    "y": {
+      "aggregate": "sum",
+      "field": "suicides_no",
+      "title": "Average Suicide Rate",
+      "axis": {"grid": false}
+    },
+    "x": {"field": "Gender", "axis": {"title": ""}},
+    "color": {"field": "Gender", "scale": {"range": ["#675193", "#ca8861"]}}
+  },
+  "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+}

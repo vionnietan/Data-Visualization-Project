@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Average Suicide Rate per Age Group",
+  "data": {
+    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/linechart_final.csv"
+  },
+  "params": [
+    {
+      "name": "Age_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "5-14 years",
+          "15-24 years",
+          "25-34 years",
+          "35-54 years",
+          "55-74 years",
+          "75+ years"
+        ],
+        "labels": [
+          "Show All",
+          "5-14 years",
+          "15-24 years",
+          "25-34 years",
+          "35-54 years",
+          "55-74 years",
+          "75+ years"
+        ],
+        "name": "Age Group Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Age_selection == null || datum.age == Age_selection"}
+  ],
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "title": "Year"},
+    "y": {
+      "field": "suicides_no",
+      "type": "quantitative",
+      "title": "Average Suicide Rate"
+    },
+    "color": {
+      "condition": {"selection": "hover", "field": "age", "type": "nominal"},
+      "value": "grey"
+    },
+    "opacity": {"condition": {"selection": "hover", "value": 1}, "value": 0.2},
+    "tooltip": [
+      {"field": "age", "type": "nominal"},
+      {"field": "year", "type": "temporal"},
+      {
+        "field": "suicides_no",
+        "type": "quantitative",
+        "title": "Average Suicide Rate"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "description": "transparent layer to make it easier to trigger selection",
+      "selection": {
+        "hover": {
+          "type": "single",
+          "on": "mouseover",
+          "empty": "all",
+          "fields": ["age"],
+          "init": {"age": "25-34 years"}
+        }
+      },
+      "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
+    },
+    {"mark": "line"}
+  ],
+  "config": {}
+}
