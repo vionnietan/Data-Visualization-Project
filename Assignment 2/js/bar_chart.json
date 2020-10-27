@@ -1,11 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title":"Top 10 Countries with highest Suicide Count",
+  "background":"#FEF8EC",
+  "width":"container",
+  "height":"container",
   "data": {
     "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/count_clean.csv"
   },
   "transform": [
     {
-      "window": [{"op": "rank", "as": "rank"}],
+      "window": [{"op": "row_number", "as": "rank"}],
       "sort": [{"field": "suicides_no", "order": "descending"}]
     },
     {"filter": "datum.rank <= 10"}
@@ -22,7 +26,7 @@
   },
   "encoding": {
     "x": {"field": "country", "type": "nominal"},
-    "y": {"field": "suicides_no", "type": "quantitative"},
+    "y": {"field": "suicides_no", "type": "quantitative","title":"Suicide Count"},
     "fillOpacity": {
       "condition": {"selection": "select", "value": 1},
       "value": 0.3
