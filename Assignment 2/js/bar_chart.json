@@ -19,7 +19,7 @@
   },
   "mark": {
     "type": "bar",
-    "fill": "#4C78A8",
+    "fill": "#C093BB",
     "stroke": "black",
     "cursor": "pointer"
   },
