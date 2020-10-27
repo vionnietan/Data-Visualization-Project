@@ -22,12 +22,12 @@
       font-weight: 900;
     }
      body{
-       background-color: lightgray;
+       background-color: #B9BABE;
      }
      .page{
        width: 1000px;
        height: 1500px;
-       background-color: white;   
+       background-color: #FEF8EC;   
        margin: auto;
        padding: 20px;
        padding-top: 50px;
@@ -49,12 +49,14 @@
       padding-right: 20px;
     }
     .pure-g{
+      padding-top: 100px;
+      padding-bottom: 100px;
       margin-bottom: 25px;
     }
     .small-font{
         font-size: 14px;
         margin-bottom: 10px;
-        padding-left: 650px;
+        padding-left: 550px;
     }
   </style>
 </head>
@@ -62,6 +64,15 @@
 
  <div class="page">
 
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Suicide Rate Across the World 1979 - 2016</h1>
+        <p>Visualisation highlights the various changing rate of suicides across the years for each country</p>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+   
     <!-- pure grid group -->
     <div class="pure-g">
         <div class="pure-u-2-3">
@@ -69,8 +80,8 @@
         </div>
         <div class="pure-u-1-3">
           <div class="description description-right">
-            <h2>Title of Vis</h2>
-            <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+            <h2>Map </h2>
+            <p>Shows the proportion of countries with highest suicide rate. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
           </div>
         </div>
       
@@ -79,10 +90,10 @@
 
     <!-- pure grid group -->
     <div class="pure-g">
-        <div class="pure-u-1-2">
+        <div class="pure-u-1-3">
           <div id="vis2"  class="vis-container"></div>
         </div>
-        <div class="pure-u-1-2">
+        <div class="pure-u-2-3">
           <div class="description description-right">
             <h2>This is the second section</h2>
             <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
@@ -92,15 +103,30 @@
     </div>
     <!-- end pure grid group -->
 
+   <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-2-3">
+          <div id="vis3"  class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-3">
+          <div class="description description-right">
+            <h2>Bar Chart </h2>
+            <p>Shows the top 10 countries with highest suiicide rate. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+          </div>
+        </div>
+      
+    </div>
+    <!-- end pure grid group -->
+   
     <!-- pure grid group -->
     <div class="pure-g">
-      <div class="pure-u-1-2">
+      <div class="pure-u-1-3">
         <div class="description description-left">
-          <h2>This is the third section</h2>
-          <p>Using all three columns without merging. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+          <h2>Suicide Rate / Gender</h2>
+          <p>Shows proportion of rate of suicide / gender / year. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
         </div>
       </div>
-      <div class="pure-u-1-2">
+      <div class="pure-u-2-3">
         <div id="vis4"  class="vis-container"></div>
       </div>
     
@@ -118,7 +144,9 @@
    
 <script type="text/javascript">
   var specVis1 = "js/map_vis.vl.json";
-  var specVis2= "js/lineyear.vl.json";
+  var specVis2= "js/multi_linechart.json";
+  var specVis3= "js/bar_chart.json";
+  var specVis4= "js/gender_rate.json";
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -128,11 +156,11 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#vis3', specVis1, {"actions": false}).then(function(result) {
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#vis4', specVis2, {"actions": false}).then(function(result) {
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
