@@ -1,5 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "background":"#FEF8EC",
+  "width":"container",
+  "height":"container",
   "description": "Average Suicide Rate per Age Group",
   "data": {
     "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/linechart_final.csv"
