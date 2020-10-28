@@ -11,7 +11,7 @@
       "value": 0,
       "bind": {
         "input": "range",
-        "min": 1998,
+        "min": 2000,
         "max": 2016,
         "step": 1,
         "name": "Year: "
@@ -19,7 +19,7 @@
     }
   ],
   "transform": [
-    {"filter": "datum.year >= 1998"},
+    {"filter": "datum.year >= 2000"},
     {"filter": "datum.year >= Year"},
     {"calculate": "datum.sex == 'female' ? 'Female' : 'Male'", "as": "Gender"}
   ],
