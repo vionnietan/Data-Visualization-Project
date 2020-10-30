@@ -1,40 +1,34 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "background":"#FEF8EC",
-  "width":"container",
   "data": {
-    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/groupedbar_final.csv"
+    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/gender_grouped.csv"
   },
-  "params": [
-    {
-      "name": "Year",
-      "value": 0,
-      "bind": {
-        "input": "range",
-        "min": 2000,
-        "max": 2016,
-        "step": 1,
-        "name": "Year: "
-      }
-    }
-  ],
   "transform": [
-    {"filter": "datum.year >= 2000"},
-    {"filter": "datum.year >= Year"},
     {"calculate": "datum.sex == 'female' ? 'Female' : 'Male'", "as": "Gender"}
   ],
   "width": {"step": 12},
   "mark": "bar",
   "encoding": {
-    "column": {"field": "year", "type": "nominal", "spacing": 10},
+    "column": {"field": "age", "type": "nominal", "spacing": 10,"title":null},
     "y": {
       "aggregate": "sum",
-      "field": "suicides_no",
+      "field": "rate_per_100k",
       "title": "Average Suicide Rate",
-      "axis": {"grid": false}
+      "axis": {"grid": false,"labelOverlap":true}
     },
     "x": {"field": "Gender", "axis": {"title": ""}},
-    "color": {"field": "Gender", "scale": {"range": ["#675193", "#ca8861"]}}
+    "color": {"field": "Gender", "scale": {"range": ["#675193", "#ca8861"]},"legend":null},
+    "tooltip": [
+      {"field": "sex", "type": "ordinal","title":"Gender"},
+      {"field": "age", "type": "nominal","title":"Age Group"},
+      {
+        "field": "rate_per_100k",
+        "type": "quantitative",
+        "title": "Average Suicide Rate",
+        "format":".2f"
+      }
+    ]
   },
   "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
 }
