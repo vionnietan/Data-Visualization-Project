@@ -7,15 +7,15 @@
   "transform": [
     {"calculate": "datum.sex == 'female' ? 'Female' : 'Male'", "as": "Gender"}
   ],
-  "width": {"step": 12},
+  "width": {"step": 17},
   "mark": "bar",
   "encoding": {
-    "column": {"field": "age", "type": "nominal", "spacing": 10,"title":null},
+    "column": {"field": "age", "type": "nominal", "spacing": 15,"title":null},
     "y": {
       "aggregate": "sum",
       "field": "rate_per_100k",
       "title": "Average Suicide Rate",
-      "axis": {"grid": false,"labelOverlap":true}
+      "axis": {"grid": false}
     },
     "x": {"field": "Gender", "axis": {"title": ""}},
     "color": {"field": "Gender", "scale": {"range": ["#675193", "#ca8861"]},"legend":null},
