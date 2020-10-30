@@ -2,9 +2,9 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "background":"#FEF8EC",
   "width":"container",
-  "title": "Average Suicide Rate per Age Group",
+  "height":250,
   "data": {
-    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/linechart_final.csv"
+    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/line_overall_age.csv"
   },
   "params": [
     {
@@ -13,16 +13,18 @@
         "input": "select",
         "options": [
           null,
-          "5-14 years",
-          "15-24 years",
-          "25-34 years",
-          "35-54 years",
-          "55-74 years",
-          "75+ years"
+          "Overall",
+          "05-14",
+          "15-24",
+          "25-34",
+          "35-54",
+          "55-74",
+          "75+"
         ],
         "labels": [
           "Show All",
-          "5-14 years",
+          "Overall",
+          "05-14 years",
           "15-24 years",
           "25-34 years",
           "35-54 years",
@@ -37,42 +39,44 @@
     {"filter": "Age_selection == null || datum.age == Age_selection"}
   ],
   "encoding": {
-    "x": {"field": "year", "type": "temporal", "title": "Year"},
+    "x": {"field": "year", "type": "temporal","title":null},
     "y": {
-      "field": "suicides_no",
+      "field": "rate_per_100k",
       "type": "quantitative",
-      "title": "Average Suicide Rate"
+      "title": "Avg. Suicide Rate / 100K population",
+      "axis": {"titleFontSize": 10}
     },
     "color": {
-      "condition": {"selection": "hover", "field": "age", "type": "nominal"},
+      "condition": {"selection": "hover", "field": "age", "type": "nominal","title":null},
       "value": "grey"
     },
-    "opacity": {"condition": {"selection": "hover", "value": 1}, "value": 0.2},
+    "opacity": {"condition": {"selection": "hover", "value": 1}, "value": 0.075},
     "tooltip": [
-      {"field": "age", "type": "nominal"},
-      {"field": "year", "type": "temporal"},
+      {"field": "age", "type": "nominal","title":"Age Group"},
+      {"field": "year", "type": "temporal","title":"Year","axis":{"format":"%Y"}},
       {
-        "field": "suicides_no",
+        "field": "rate_per_100k",
         "type": "quantitative",
-        "title": "Average Suicide Rate"
+        "title": "Average Suicide Rate",
+        "format":".2f"
       }
     ]
   },
   "layer": [
     {
-      "description": "transparent layer to make it easier to trigger selection",
       "selection": {
         "hover": {
           "type": "single",
           "on": "mouseover",
           "empty": "all",
           "fields": ["age"],
-          "init": {"age": "25-34 years"}
+          "init": {"age": "Overall"}
         }
       },
       "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
     },
-    {"mark": "line"}
+    {"mark": {"type": "line"}}
   ],
-  "config": {}
+  "config": {
+  }
 }
