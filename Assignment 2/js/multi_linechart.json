@@ -75,8 +75,131 @@
       },
       "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
     },
-    {"mark": {"type": "line"}}
+    {"mark": {"type": "line"}},
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "rate_per_100k", "type": "quantitative","format":".2f"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['age'] == '75+'&& datum['rate_per_100k'] > 30",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+         {"field": "age", "type": "nominal","title":"Age Group"},
+         {"field": "year", "type": "temporal","title":"Year","axis":{"format":"%Y"}},
+         {
+          "field": "rate_per_100k",
+          "type": "quantitative",
+          "title": "Average Suicide Rate",
+          "format":".2f"
+         }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 10,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "rate_per_100k", "type": "quantitative","format":".2f"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['age'] == '75+'&& datum['rate_per_100k'] > 30",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+         {"field": "age", "type": "nominal","title":"Age Group"},
+         {"field": "year", "type": "temporal","title":"Year","axis":{"format":"%Y"}},
+         {
+          "field": "rate_per_100k",
+          "type": "quantitative",
+          "title": "Average Suicide Rate",
+          "format":".2f"
+         }
+        ]
+      }
+    },
+        {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -15,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "rate_per_100k", "type": "quantitative","format":".2f"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['age'] == 'Overall' && datum['rate_per_100k'] > 15.4",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+         {"field": "age", "type": "nominal","title":"Age Group"},
+         {"field": "year", "type": "temporal","title":"Year","axis":{"format":"%Y"}},
+         {
+          "field": "rate_per_100k",
+          "type": "quantitative",
+          "title": "Average Suicide Rate",
+          "format":".2f"
+         }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 10,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "rate_per_100k", "type": "quantitative","format":".2f"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['age'] == 'Overall'&& datum['rate_per_100k'] >15.4",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+         {"field": "age", "type": "nominal","title":"Age Group"},
+         {"field": "year", "type": "temporal","title":"Year","axis":{"format":"%Y"}},
+         {
+          "field": "rate_per_100k",
+          "type": "quantitative",
+          "title": "Average Suicide Rate",
+          "format":".2f"
+         }
+        ]
+      }
+    }
   ],
-  "config": {
-  }
+  "config": {}
 }
