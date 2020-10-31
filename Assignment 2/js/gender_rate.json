@@ -1,34 +1,61 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "background":"#FEF8EC",
-  "data": {
-    "url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/gender_grouped.csv"
-  },
+  "data": {"url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/gender_grouped.csv"},
   "transform": [
     {"calculate": "datum.sex == 'female' ? 'Female' : 'Male'", "as": "Gender"}
   ],
-  "width": {"step": 19},
-  "mark": "bar",
-  "encoding": {
-    "column": {"field": "age", "type": "nominal", "spacing": 15,"title":null},
-    "y": {
-      "aggregate": "sum",
-      "field": "rate_per_100k",
-      "title": "Average Suicide Rate",
-      "axis": {"grid": false}
-    },
-    "x": {"field": "Gender", "axis": {"title": ""}},
-    "color": {"field": "Gender", "scale": {"range": ["#675193", "#ca8861"]},"legend":null},
-    "tooltip": [
-      {"field": "sex", "type": "ordinal","title":"Gender"},
-      {"field": "age", "type": "nominal","title":"Age Group"},
-      {
+  "facet": {"field": "age", "type": "nominal","title":null},
+  "spec": {
+    "encoding": {
+      "y": {
+        "aggregate": "sum",
         "field": "rate_per_100k",
         "type": "quantitative",
-        "title": "Average Suicide Rate",
-        "format":".2f"
+        "title":"Average Suicide Rate",
+        "axis": {"grid": false}
+      },
+      "x": {"field": "Gender", "type": "nominal", "axis": {"title": ""}}
+    },
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "color": {
+            "field": "Gender",
+            "type": "nominal",
+            "scale": {"range": ["#675193", "#ca8861"]}
+          },
+          "tooltip": [
+            {"field": "sex", "type": "ordinal","title":"Gender"},
+            {"field": "age", "type": "nominal","title":"Age Group"},
+            {"field": "rate_per_100k", "type": "quantitative", "title": "Average Suicide Rate","format":".2f"}]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "dx": 9,
+          "dy":-5,
+          "angle": 0,
+          "baseline": "middle",
+          "align": "right"
+        },
+        "encoding": {
+          "text": {
+            "aggregate": "sum",
+            "field": "rate_per_100k",
+            "type": "quantitative",
+            "format": ".3s"
+          }
+        }
       }
     ]
   },
-  "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+  "config": {
+    "view": {"stroke": "transparent"},
+    "facet": {"spacing": 21},
+    "axis": {"domainWidth": 1},
+    "legend":{"disable": true}
+  }
 }
