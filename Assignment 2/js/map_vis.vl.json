@@ -48,6 +48,85 @@
             {"field": "Rate/100k", "type": "quantitative", "format": ".2f", "title": "Suicide Rate / 100k"}
           ]
           }
+        },
+        {
+      "data": {
+         "values": [{}]
+      },
+      "encoding": {
+        "latitude": {"datum": 55.751244},
+        "longitude": {"datum": 105.618423}
+      },
+      "layer": [{
+        "mark": {
+          "type": "text",
+          "fill":"white",
+          "align": "right",
+          "baseline": "bottom",
+          "x": "width",
+          "text": "Russia"
         }
-        ]
+      }]
+    },
+    {
+      "data": {
+         "values": [{}]
+      },
+      "encoding": {
+        "latitude": {"datum": -30},
+        "longitude": {"datum": 147}
+      },
+      "layer": [{
+        "mark": {
+          "type": "text",
+          "fill":"white",
+          "fontSize":8,
+          "align": "right",
+          "baseline": "bottom",
+          "x": "width",
+          "text": "Australia"
+        }
+      }]
+    },
+    {
+      "data": {
+         "values": [{}]
+      },
+      "encoding": {
+        "latitude": {"datum": 35},
+        "longitude": {"datum": -98}
+      },
+      "layer": [{
+        "mark": {
+          "type": "text",
+          "fill":"white",
+          "fontSize":8,
+          "align": "right",
+          "baseline": "bottom",
+          "x": "width",
+          "text": "USA"
+        }
+      }]
+    },
+    {
+      "data": {
+         "values": [{}]
+      },
+      "encoding": {
+        "latitude": {"datum": -50},
+        "longitude": {"datum": -35}
+      },
+      "layer": [{
+        "mark": {
+          "type": "text",
+          "fill":"black",
+          "fontSize":8,
+          "align": "right",
+          "baseline": "bottom",
+          "x": "width",
+          "text": "Argentina"
+        }
+      }]
+    }
+  ]
 }
