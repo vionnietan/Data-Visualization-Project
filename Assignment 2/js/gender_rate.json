@@ -2,6 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "background":"#FEF8EC",
   "data": {"url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/gender_grouped.csv"},
+  "selection": {
+    "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
+    "select": {"type": "multi"}
+  },
   "transform": [
     {"calculate": "datum.sex == 'female' ? 'Female' : 'Male'", "as": "Gender"}
   ],
@@ -19,13 +23,27 @@
     },
     "layer": [
       {
-        "mark": "bar",
+        "selection": {
+          "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
+          "select": {"type": "multi"}},
+        "mark": {"type":"bar", "cursor":"pointer"},
         "encoding": {
           "color": {
             "field": "Gender",
             "type": "nominal",
             "scale": {"range": ["#675193", "#ca8861"]}
           },
+          "fillOpacity": {
+            "condition": {"selection": "select", "value": 1},
+            "value": 0.3},
+          "strokeWidth": {
+            "condition": [{
+              "test": {"and": [{"selection": "select"},
+              "length(data(\"select_store\"))"]},
+            "value": 2
+            },
+          {"selection": "highlight", "value": 1}],
+          "value": 0},
           "tooltip": [
             {"field": "sex", "type": "ordinal","title":"Gender"},
             {"field": "age", "type": "nominal","title":"Age Group"},
@@ -56,6 +74,7 @@
     "view": {"stroke": "transparent"},
     "facet": {"spacing": 21},
     "axis": {"domainWidth": 1},
-    "legend":{"disable": true}
+    "legend":{"disable": true},
+    "scale": {"bandPaddingInner": 0.2}
   }
 }
