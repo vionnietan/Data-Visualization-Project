@@ -72,7 +72,7 @@
   },
   "config": {
     "view": {"stroke": "transparent"},
-    "facet": {"spacing": 21},
+    "facet": {"spacing": 16},
     "axis": {"domainWidth": 1},
     "legend":{"disable": true},
     "scale": {"bandPaddingInner": 0.2}
