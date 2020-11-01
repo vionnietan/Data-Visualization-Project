@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "background":"#FFEED9",
-  "height":350,
   "data": {"url": "https://raw.githubusercontent.com/vionnietan/FIT3179/master/Assignment%202/data/gender_grouped.csv"},
   "selection": {
     "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
@@ -72,7 +71,7 @@
     ]
   },
   "config": {
-    "view": {"stroke": "transparent"},
+    "view": {"stroke": "transparent","continuousHeight":250},
     "facet": {"spacing": 14},
     "axis": {"domainWidth": 1},
     "legend":{"disable": true},
