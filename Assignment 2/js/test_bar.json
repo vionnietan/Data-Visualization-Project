@@ -22,7 +22,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["05-14", "15-24", "25-34", "35-54", "55-74", "75+"],
-        "range": ["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1","#54278f"]
+        "range": ["#b35806", "#f1a340", "#fee0b6", "#d8daeb", "#998ec3","#542788"]
       },
       "title": "Age Group"
     },
