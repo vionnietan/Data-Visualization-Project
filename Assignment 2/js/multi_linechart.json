@@ -201,5 +201,5 @@
       }
     }
   ],
-  "config": {"axis": {"grid": false}}
+  "config": {"axis": {"grid": false},"view": {"stroke": "transparent"}}
 }
