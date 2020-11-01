@@ -32,7 +32,7 @@
           "color": {
             "field": "Gender",
             "type": "nominal",
-            "scale": {"range": ["#675193", "#ca8861"]}
+            "scale": {"range": ["#675193", "#b35806"]}
           },
           "fillOpacity": {
             "condition": {"selection": "select", "value": 1},
