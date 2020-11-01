@@ -33,7 +33,10 @@
               "as": "Rate/100k"
             }
           ],
-          "mark": {"type": "geoshape"},
+          "selection": {
+          "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
+          "select": {"type": "multi"}},
+          "mark": {"type": "geoshape", "cursor":"pointer"},
           "encoding": {
             "color":{
               "field": "Rate/100k",
@@ -44,6 +47,17 @@
                 "scheme": {"name": "purples"}
               }
             },
+            "fillOpacity": {
+            "condition": {"selection": "select", "value": 1},
+            "value": 0.3},
+          "strokeWidth": {
+            "condition": [{
+              "test": {"and": [{"selection": "select"},
+              "length(data(\"select_store\"))"]},
+            "value": 2
+            },
+          {"selection": "highlight", "value": 1}],
+          "value": 0},
             "tooltip": [
             {"field": "properties.name", "type": "nominal", "title": "Country"},
             {"field": "Rate/100k", "type": "quantitative", "format": ".2f", "title": "Suicide Rate / 100k"}
